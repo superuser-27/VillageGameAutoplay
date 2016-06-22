@@ -20,9 +20,9 @@ elif "Banditen haben ein Dorf angegriffen. Der Bürgermeister hat um Hilfe gebet
 	time.sleep(t)
 	print("Quest starten🗡")
 	log(sys.argv)
-elif "Die Arbeit ist beendet, Eure Lordschaft!" in str(sys.argv):
+elif "Herr, die Arbeit ist beendet." in str(sys.argv):
 	time.sleep(t)
-	print("🍞Arbeiten!")
+	print("/work")
 	log(sys.argv)
 elif "Deine Felder sind voll. Du musst die Ernte einfahren, sonst wird sie verrotten." in str(sys.argv):
 	time.sleep(t)
