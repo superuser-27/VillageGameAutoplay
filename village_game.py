@@ -26,7 +26,7 @@ elif "Die Arbeit ist beendet, Eure Lordschaft!" in str(sys.argv):
 	log(sys.argv)
 elif "Deine Felder sind voll. Du musst die Ernte einfahren, sonst wird sie verrotten." in str(sys.argv):
 	time.sleep(t)
-	print("Verkaufen Sie Brot💰")
+	print("/harvest")
 	log(sys.argv)
 else:
 	log(sys.argv,"ERROR")
