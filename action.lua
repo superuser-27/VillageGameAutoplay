@@ -8,7 +8,7 @@ function on_msg_receive (msg)
 	end
 	print(msg.text)
 	msg.text=string.gsub(msg.text, "'", "#")
-      	r=string.format("%s",io.popen('python3 village_game.py "'..string.format("%s",msg.text)..'"'):read())
+      	r=string.format("%s",io.popen('python3 VillageGameAutoplay/village_game.py "'..string.format("%s",msg.text)..'"'):read())
       	if ( r ~= "nil" ) then
 	 	print(msg.from.print_name..": "..r)
 	 	send_msg(msg.from.print_name,r,ok_cb,false)
