@@ -4,7 +4,7 @@ import time
 import random
 import json
 def log(msg, answ, err=""):
-	os.popen('echo "#__'+str(err)+'__######'+str(msg)+',[\''+str(answ)+',\']'+'##########" >> VillageGameAutoplay/village_game.txt')
+	os.popen('echo "#__'+str(err)+'__######'+str(msg)+',[\''+str(answ)+',\']'+'##########" >> VillageGameAutoplay/village_game.log')
 msg=sys.argv
 msg.pop(0)
 msg=str(msg)
