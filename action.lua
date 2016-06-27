@@ -14,6 +14,16 @@ function on_msg_receive (msg)
 	 	send_msg(msg.from.print_name,r,ok_cb,false)
       	end
       end
+      if (msg.from.print_name == "USERNAME" )then
+      	print(msg.text)
+	msg.text=string.gsub(msg.text, "'", "#")
+      	r=string.format("%s",io.popen('python3 VillageGameAutoplay/setting.py "'..string.format("%s",msg.text)..'"'):read())
+      	if ( r ~= "nil" ) then
+	 	print(msg.from.print_name..": "..r)
+	 	r=string.gsub(r, "\\n", "\n")
+	 	send_msg(msg.from.print_name,r,ok_cb,false)
+      	end
+      end
   end
    
   function on_our_id (id)
