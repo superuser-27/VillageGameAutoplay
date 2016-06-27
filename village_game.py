@@ -2,31 +2,69 @@ import sys
 import os
 import time
 import random
-def log(msg, err=""):
-	os.popen('echo "#__'+err+'__######'+str(msg)+'##########" >> VillageGameAutoplay/village_game.txt')
-sys.argv.pop(0)
-sys.argv=str(sys.argv)
-sys.argv=sys.argv.replace("\\n","")
-t=random.randrange(50,200)/100
-if "Die Banditen sind starke Jungs —  sie haben deine Truppen in die Mangel genommen" in str(sys.argv):
+import json
+def log(msg, answ, err=""):
+	os.popen('echo "#__'+str(err)+'__######'+str(msg)+',[\''+str(answ)+',\']'+'##########" >> VillageGameAutoplay/village_game.txt')
+msg=sys.argv
+msg.pop(0)
+msg=str(msg)
+msg=msg.replace("\\n","")
+t=random.randrange(30,100)/100
+settings=json.loads(os.popen("cat VillageGameAutoplay/setting.json").read())
+answ=0
+fight=settings["fight"]
+quest=settings["quest"]
+pause=settings["pause"]
+if pause == 1:
+	fight=0
+	quest=0
+#quest
+if "Wähle eine Quest, sie durchzuführen wird etwas kosten" in msg and quest:
 	time.sleep(t)
-	print("Verstärkung schicken! 🗡")
-	log(sys.argv)
-elif "Wähle eine Quest, sie durchzuführen wird etwas kosten" in str(sys.argv):
+	answ="⭐️⭐️⭐️Das Dorf retten"
+	log(msg,answ)
+elif "Banditen haben ein Dorf angegriffen. Der Bürgermeister hat um Hilfe gebeten" in msg:
+	if not quest:
+		t=0.3
 	time.sleep(t)
-	print("⭐️⭐️⭐️Das Dorf retten")
-	log(sys.argv)
-elif "Banditen haben ein Dorf angegriffen. Der Bürgermeister hat um Hilfe gebeten" in str(sys.argv):
+	answ="Quest starten🗡"
+	log(msg,answ)
+elif "Die Banditen sind starke Jungs —  sie haben deine Truppen in die Mangel genommen" in msg \
+    or "Die Karawane wurde angegriffen und ihre Beschützer konnten sie nur knapp verteidigen" in msg \
+    or "Deine Truppen sind nicht Herr der Lage" in msg:
+	if not quest:
+		t=0.3
 	time.sleep(t)
-	print("Quest starten🗡")
-	log(sys.argv)
-elif "Herr, die Arbeit ist beendet." in str(sys.argv):
+	answ="Verstärkung schicken! 🗡"
+	log(msg,answ)
+#fight
+elif "Du kannst gegen andere Spieler kämpfen um Medailen" in msg and fight:
 	time.sleep(t)
-	print("/work")
-	log(sys.argv)
-elif "Deine Felder sind voll. Du musst die Ernte einfahren, sonst wird sie verrotten." in str(sys.argv):
+	answ="Gegner suchen!👁"
+	log(msg,answ)
+elif "Dein Gegner ist" in msg:
+	if not fight:
+		t=0.3
 	time.sleep(t)
-	print("/harvest")
-	log(sys.argv)
+	answ="Angriff!⚔"
+	log(msg,answ)
+elif "Während der Schlacht kamen unsere Truppen in einen Hinterhalt" in msg:
+	if not fight:
+		t=0.3
+	time.sleep(t)
+	answ="Verstärkung senden!🗡"
+	log(msg,answ)
+#rest
+elif "die Arbeit ist beendet" in msg:
+	time.sleep(t)
+	answ="/work"
+	log(msg,answ)
+elif "Deine Felder sind voll. Du musst die Ernte einfahren, sonst wird sie verrotten." in msg:
+	time.sleep(t)
+	answ="/harvest"
+	log(msg,answ)
 else:
-	log(sys.argv,"ERROR")
+	log(msg,answ,"ERROR")
+
+if answ != 0:
+	print(answ)
