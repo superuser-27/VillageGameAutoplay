@@ -9,7 +9,7 @@ msg=sys.argv
 msg.pop(0)
 msg=str(msg)
 msg=msg.replace("\\n","")
-t=random.randrange(30,100)/10
+t=random.randrange(30,100)/100
 settings=json.loads(os.popen("cat VillageGameAutoplay/setting.json").read())
 answ=0
 fight=settings["fight"]
