@@ -50,9 +50,11 @@ function on_msg_receive (msg)
 	elseif(msg.text=="/setlang_en" or msg.text=="/english")then
 		setlang('en')
 	 	send_msg(msg.from.print_name,'Language set to English!',status_offline,false)
-
 	end
       end
+	if(msg.text=="Ping" or msg.text=="ping") then
+		send_msg(msg.from.print_name,"Pong",status_offline,false)
+	end
 
       if (msg.from.print_name == "Village_Game" )then
 	if (msg.text==nil) then

@@ -17,8 +17,8 @@ https://github.com/vysheng/tg
 	- Support for different profiles running at the same time will be added in future.
 
 4. Message to **yourself** to change settings:
-	- `pause` to pause automatic fight/quest 
-	- `resume` to resume automatic fight/quest 
+	- `pause` to pause automatic fight/quest
+	- `resume` to resume automatic fight/quest
 	- `/11` to set automatic quest: :white_check_mark:  and fight: :white_check_mark:
 	- `/10` to set automatic quest: :white_check_mark:  and fight: :x:
 	- `/01` to set automatic quest: :x: and fight: :white_check_mark:
