@@ -6,6 +6,8 @@
 .*.swp
 *.out
 *.log
+setting_*.json
+village_game_*.py
 
 # IDE files to ignore (Netbeans, Eclipse)
 nbproject/private/
