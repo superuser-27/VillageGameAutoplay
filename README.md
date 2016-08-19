@@ -9,6 +9,10 @@ https://github.com/vysheng/tg
 2. Create a directory "VillageGameAutoplay" and download all files there or just clone this Repository
 3. Then start telegram-cli and execute the lua script file. Something like this:  
 `bin/telegram-cli -k tg-server.pub -W -s VillageGameAutoplay/action.lua`
+For multiple profiles, just specify the profile you want to start the script with:
+`bin/telegram-cli -p profile1 -W -s VillageGameAutoplay/action.lua`
+Support for different profiles running at the same time will be added in future.
+
 4. Message to yourself to change settings:
 	- `pause` to pause automatic fight/quest 
 	- `resume` to resume automatic fight/quest 
