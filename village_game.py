@@ -4,13 +4,13 @@ import time
 import random
 import json
 def log(msg, answ, err=""):
-	os.popen('echo "#__'+str(err)+'__######'+str(msg)+',[\''+str(answ)+',\']'+'##########" >> VillageGameAutoplay/village_game.log')
+	os.popen('echo "#__'+str(err)+'__######'+str(msg)+',[\''+str(answ)+',\']'+'##########" >> VillageGameAutoplay_cp/village_game.log')
 msg=sys.argv
 msg.pop(0)
 msg=str(msg)
 msg=msg.replace("\\n","")
-t=random.randrange(30,100)/10
-settings=json.loads(os.popen("cat VillageGameAutoplay/setting.json").read())
+t=random.randrange(30,100)/15
+settings=json.loads(os.popen("cat VillageGameAutoplay_cp/setting.json").read())
 answ=0
 fight=settings["fight"]
 quest=settings["quest"]
@@ -23,15 +23,13 @@ if "Wähle eine Quest, sie durchzuführen wird etwas kosten" in msg and quest:
 	time.sleep(t)
 	answ="⭐️⭐️⭐️Das Dorf retten"
 	log(msg,answ)
-elif "Banditen haben ein Dorf angegriffen. Der Bürgermeister hat um Hilfe gebeten" in msg:
+elif "Banditen haben ein Dorf angegriffen. Der Bürgermeister hat um Hilfe gebeten" in msg and quest:
 	if not quest:
 		t=0.3
 	time.sleep(t)
 	answ="Quest starten🗡"
 	log(msg,answ)
-elif "Die Banditen sind starke Jungs —  sie haben deine Truppen in die Mangel genommen" in msg \
-    or "Die Karawane wurde angegriffen und ihre Beschützer konnten sie nur knapp verteidigen" in msg \
-    or "Deine Truppen sind nicht Herr der Lage" in msg:
+elif "Die Banditen sind starke Jungs —  sie haben deine Truppen in die Mangel genommen" in msg and quest:
 	if not quest:
 		t=0.3
 	time.sleep(t)
@@ -42,13 +40,13 @@ elif "Du kannst gegen andere Spieler kämpfen um Medailen" in msg and fight:
 	time.sleep(t)
 	answ="Gegner suchen!👁"
 	log(msg,answ)
-elif "Dein Gegner ist" in msg:
+elif "Dein Gegner ist" in msg and fight:
 	if not fight:
 		t=0.3
 	time.sleep(t)
 	answ="Angriff!⚔"
 	log(msg,answ)
-elif "Während der Schlacht kamen unsere Truppen in einen Hinterhalt" in msg:
+elif "Während der Schlacht kamen unsere Truppen in einen Hinterhalt" in msg and fight:
 	if not fight:
 		t=0.3
 	time.sleep(t)
