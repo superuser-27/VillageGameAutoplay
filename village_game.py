@@ -4,13 +4,13 @@ import time
 import random
 import json
 def log(msg, answ, err=""):
-	os.popen('echo "#__'+str(err)+'__######'+str(msg)+',[\''+str(answ)+',\']'+'##########" >> VillageGameAutoplay_cp/village_game.log')
+	os.popen('echo "#__'+str(err)+'__######'+str(msg)+',[\''+str(answ)+',\']'+'##########" >> VillageGameAutoplay/village_game.log')
 msg=sys.argv
 msg.pop(0)
 msg=str(msg)
 msg=msg.replace("\\n","")
 t=random.randrange(30,100)/15
-settings=json.loads(os.popen("cat VillageGameAutoplay_cp/setting.json").read())
+settings=json.loads(os.popen("cat VillageGameAutoplay/setting.json").read())
 answ=0
 fight=settings["fight"]
 quest=settings["quest"]
