@@ -19,41 +19,41 @@ if pause == 1:
 	fight=0
 	quest=0
 #quest
-if "Completa le missioni, vinci e guadagnarai" in msg and quest:
+if "Wähle eine Quest, sie durchzuführen wird etwas kosten" in msg and quest:
 	time.sleep(t)
-	answ="⭐️⭐️⭐️Difendi il villaggio"
+	answ="⭐️⭐️⭐️Das Dorf retten"
 	log(msg,answ)
-elif "I banditi hanno attaccato il villaggio" in msg and quest:
+elif "Banditen haben ein Dorf angegriffen" in msg and quest:
 	if not quest:
 		t=0.3
 	time.sleep(t)
-	answ="Inizia missione🗡"
+	answ="Quest starten🗡"
 	log(msg,answ)
-elif "I banditi sono dei tipacci davvero cattivi" in msg and quest:
+elif "Die Banditen sind starke Jungs —  sie haben deine Truppen in die Mangel genommen" in msg and quest:
 	if not quest:
 		t=0.3
 	time.sleep(t)
-	answ="Manda rinforzi! 🗡"
+	answ="Verstärkung schicken! 🗡"
 	log(msg,answ)
 #fight
-elif "Puoi combattere con altri giocatori" in msg and fight:
+elif "Du kannst gegen andere Spieler kämpfen um Medailen" in msg and fight:
 	time.sleep(t)
-	answ="Cerca avversario👁"
+	answ="Gegner suchen!👁"
 	log(msg,answ)
-elif "Per attaccare, hai bisogno di" in msg and fight:
+elif "Dein Gegner ist" in msg and fight:
 	if not fight:
 		t=0.3
 	time.sleep(t)
-	answ="Attacca!⚔"
+	answ="Angriff!⚔"
 	log(msg,answ)
-elif "Durante la battaglia, il nemico ha circondato" in msg and fight:
+elif "Während der Schlacht kamen unsere Truppen in einen Hinterhalt" in msg and fight:
 	if not fight:
 		t=0.3
 	time.sleep(t)
-	answ="Manda rinforzi!🗡"
+	answ="Verstärkung senden!🗡"
 	log(msg,answ)
 #rest
-elif "Lavoro completato, mio signore" in msg:
+elif "die Arbeit ist beendet" in msg:
 	time.sleep(t)
 	answ="/work"
 	log(msg,answ)

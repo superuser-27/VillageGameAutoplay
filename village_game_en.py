@@ -19,45 +19,45 @@ if pause == 1:
 	fight=0
 	quest=0
 #quest
-if "Completa le missioni, vinci e guadagnarai" in msg and quest:
+if "You can choose a quest, which performing" in msg and quest:
 	time.sleep(t)
-	answ="⭐️⭐️⭐️Difendi il villaggio"
+	answ="⭐️⭐️⭐️Save the village"
 	log(msg,answ)
-elif "I banditi hanno attaccato il villaggio" in msg and quest:
+elif "Bandits attacked a village" in msg and quest:
 	if not quest:
 		t=0.3
 	time.sleep(t)
-	answ="Inizia missione🗡"
+	answ="Run quest🗡"
 	log(msg,answ)
-elif "I banditi sono dei tipacci davvero cattivi" in msg and quest:
+elif "The bandits were some strong guys" in msg and quest:
 	if not quest:
 		t=0.3
 	time.sleep(t)
-	answ="Manda rinforzi! 🗡"
+	answ="Send reinforcements! 🗡"
 	log(msg,answ)
 #fight
-elif "Puoi combattere con altri giocatori" in msg and fight:
+elif "You can fight against other players and win medals" in msg and fight:
 	time.sleep(t)
-	answ="Cerca avversario👁"
+	answ="Search opponent👁"
 	log(msg,answ)
-elif "Per attaccare, hai bisogno di" in msg and fight:
+elif "Your opponent is" in msg and fight:
 	if not fight:
 		t=0.3
 	time.sleep(t)
-	answ="Attacca!⚔"
+	answ="Attack!⚔"
 	log(msg,answ)
-elif "Durante la battaglia, il nemico ha circondato" in msg and fight:
+elif "During the battle, the enemy raised a militia" in msg and fight:
 	if not fight:
 		t=0.3
 	time.sleep(t)
-	answ="Manda rinforzi!🗡"
+	answ="Send reinforcement!🗡"
 	log(msg,answ)
 #rest
-elif "Lavoro completato, mio signore" in msg:
+elif "Work is finished" in msg:
 	time.sleep(t)
 	answ="/work"
 	log(msg,answ)
-elif "Deine Felder sind voll. Du musst die Ernte einfahren, sonst wird sie verrotten." in msg:
+elif "Your fields are filled." in msg:
 	time.sleep(t)
 	answ="/harvest"
 	log(msg,answ)
