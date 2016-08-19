@@ -17,3 +17,9 @@ https://github.com/vysheng/tg
 	- `/01` to set automatic quest:false and fight:true
 	- `/00` to set automatic quest:false and fight:false (this will just auto /work and /harvest).
 
+5. To change language:
+	- `/setlang_it` or `/italiano` to change to Italian
+	- `/setlang_de` or `/deutsch` to change to German
+	- `/setlang_en` or `/english` to change to English
+
+6. To start questing/fighting send the command to Village_Game and the script will continue on its own.
