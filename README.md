@@ -16,17 +16,17 @@ https://github.com/vysheng/tg
 
 	- Support for different profiles running at the same time will be added in future.
 
-4. Message to *yourself* to change settings:
+4. Message to **yourself** to change settings:
 	- `pause` to pause automatic fight/quest 
 	- `resume` to resume automatic fight/quest 
-	- `/11` to set automatic quest:true  and fight:true
-	- `/10` to set automatic quest:true  and fight:false
-	- `/01` to set automatic quest:false and fight:true
-	- `/00` to set automatic quest:false and fight:false (this will just auto /work and /harvest).
+	- `/11` to set automatic quest: :white_check_mark:  and fight: :white_check_mark:
+	- `/10` to set automatic quest: :white_check_mark:  and fight: :x:
+	- `/01` to set automatic quest: :x: and fight: :white_check_mark:
+	- `/00` to set automatic quest: :x: and fight: :x: (this will just auto /work and /harvest).
 
 5. To change language:
-	- `/setlang_it` or `/italiano` to change to Italian
-	- `/setlang_de` or `/deutsch` to change to German
-	- `/setlang_en` or `/english` to change to English
+	- `/setlang_it` or `/italiano` to change to Italian :it:
+	- `/setlang_de` or `/deutsch` to change to German :de:
+	- `/setlang_en` or `/english` to change to English :uk:
 
 6. To start questing/fighting send the command to Village_Game and the script will continue on its own.
