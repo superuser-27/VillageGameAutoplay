@@ -57,7 +57,7 @@ elif "Lavoro completato, mio signore" in msg:
 	time.sleep(t)
 	answ="/work"
 	log(msg,answ)
-elif "Deine Felder sind voll. Du musst die Ernte einfahren, sonst wird sie verrotten." in msg:
+elif "I tuoi campi sono pieni." in msg:
 	time.sleep(t)
 	answ="/harvest"
 	log(msg,answ)
