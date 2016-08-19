@@ -68,6 +68,10 @@ function on_msg_receive (msg)
 	if not file_check("VillageGameAutoplay/setting_"..msg.from.print_name..".json")then
 		file_copy("VillageGameAutoplay/setting.json","VillageGameAutoplay/setting_"..msg.from.print_name..".json")
 	end
+	if not file_check('VillageGameAutoplay/village_game_'..msg.to.print_name..'.py')then
+		file_copy('VillageGameAutoplay/village_game.py','VillageGameAutoplay/village_game_'..msg.to.print_name..'.py')
+		send_msg(msg.to.print_name,"You have not set your language yet. Options are /english, /italiano, /deutsch",status_offline,false)
+	end
 	message=string.format("%s",msg.text)
 	tmp=io.popen('python3 VillageGameAutoplay/village_game_'..msg.to.print_name..'.py "'..message..'" '..msg.to.print_name):read()
       	r=string.format("%s",tmp)
