@@ -29,4 +29,4 @@ https://github.com/vysheng/tg
 	- `/setlang_de` or `/deutsch` to change to German :de:
 	- `/setlang_en` or `/english` to change to English :uk:
 
-6. To start questing/fighting send the command to Village_Game and the script will continue on its own.
+6. To start questing/fighting send the `/quests` or `/battles` command to Village_Game and the script will continue on its own.
