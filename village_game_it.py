@@ -66,6 +66,9 @@ elif "I tuoi campi sono pieni." in msg:
 	time.sleep(t)
 	answ="/harvest"
 	log(msg,answ)
+elif "non hai denaro" in msg and quest:
+	time.sleep(t)
+	answ="/quests"
 else:
 	log(msg,answ,"ERROR")
 

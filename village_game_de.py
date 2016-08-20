@@ -66,6 +66,9 @@ elif "Deine Felder sind voll. Du musst die Ernte einfahren, sonst wird sie verro
 	time.sleep(t)
 	answ="/harvest"
 	log(msg,answ)
+elif "nicht genug Geld" in msg and quest:
+	time.sleep(t)
+	answ="/quests"
 else:
 	log(msg,answ,"ERROR")
 
