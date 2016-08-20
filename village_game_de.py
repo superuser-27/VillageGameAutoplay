@@ -39,13 +39,17 @@ elif "Die Banditen sind starke Jungs —  sie haben deine Truppen in die Mangel 
 #fight
 elif "Du kannst gegen andere Spieler kämpfen um Medailen" in msg and fight:
 	time.sleep(t)
-	answ="Gegner suchen!👁"
+
 	log(msg,answ)
 elif "Dein Gegner ist" in msg and fight:
+	val=[int(s) for s in msg.split() if s.isdigit()]
 	if not fight:
 		t=0.3
 	time.sleep(t)
-	answ="Angriff!⚔"
+	if val[len(val)-4]>val[len(val)-5]:
+		answ="Angriff!⚔"
+	else:
+		answ="Gegner suchen!👁"
 	log(msg,answ)
 elif "Während der Schlacht kamen unsere Truppen in einen Hinterhalt" in msg and fight:
 	if not fight:

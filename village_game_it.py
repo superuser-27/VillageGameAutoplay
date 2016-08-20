@@ -42,10 +42,14 @@ elif "Puoi combattere con altri giocatori" in msg and fight:
 	answ="Cerca avversario👁"
 	log(msg,answ)
 elif "Per attaccare, hai bisogno di" in msg and fight:
+	val=[int(s) for s in msg.split() if s.isdigit()]
 	if not fight:
 		t=0.3
 	time.sleep(t)
-	answ="Attacca!⚔"
+	if val[len(val)-4]>val[len(val)-5]:
+		answ="Attacca!⚔"
+	else:
+		answ="Cerca avversario👁"
 	log(msg,answ)
 elif "Durante la battaglia, il nemico ha circondato" in msg and fight:
 	if not fight:

@@ -42,10 +42,14 @@ elif "You can fight against other players and win medals" in msg and fight:
 	answ="Search opponent👁"
 	log(msg,answ)
 elif "Your opponent is" in msg and fight:
+	val=[int(s) for s in msg.split() if s.isdigit()]
 	if not fight:
 		t=0.3
 	time.sleep(t)
-	answ="Attack!⚔"
+	if val[len(val)-4]>val[len(val)-5]:
+		answ="Attack!⚔"
+	else:
+		answ="Search opponent👁"
 	log(msg,answ)
 elif "During the battle, the enemy raised a militia" in msg and fight:
 	if not fight:

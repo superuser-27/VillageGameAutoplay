@@ -1,7 +1,7 @@
 function on_msg_receive (msg)
       if msg.from.print_name==msg.to.print_name then
-		if not file_check("VillageGameAutoplay/setting_"..msg.from.print_name..".json")then
-			file_copy("VillageGameAutoplay/setting.json","VillageGameAutoplay/setting_"..msg.from.print_name..".json")
+		if not file_check("VillageGameAutoplay/setting_"..msg.to.print_name..".json")then
+			file_copy("VillageGameAutoplay/setting.json","VillageGameAutoplay/setting_"..msg.to.print_name..".json")
 		end
           if(msg.text=="pause" or msg.text=="Pause")then
 		file=io.open("VillageGameAutoplay/setting_"..msg.from.print_name..".json","w")
