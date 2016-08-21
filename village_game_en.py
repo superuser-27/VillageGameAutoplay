@@ -24,6 +24,9 @@ if "You can choose a quest, which performing" in msg and quest:
 	time.sleep(t)
 	answ="⭐️⭐️⭐️Save the village"
 	log(msg,answ)
+elif "you have no money" in msg and quest:
+	time.sleep(t)
+	answ="/quests"
 elif "Bandits attacked a village" in msg and quest:
 	if not quest:
 		t=0.3
@@ -66,9 +69,6 @@ elif "Your fields are filled." in msg:
 	time.sleep(t)
 	answ="/harvest"
 	log(msg,answ)
-elif "you have no money" in msg and quest:
-	time.sleep(t)
-	answ="/quests"
 else:
 	log(msg,answ,"ERROR")
 

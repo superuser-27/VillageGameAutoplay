@@ -24,6 +24,9 @@ if "Completa le missioni, vinci e guadagnarai" in msg and quest:
 	time.sleep(t)
 	answ="⭐️⭐️⭐️Difendi il villaggio"
 	log(msg,answ)
+elif (("non hai denaro" in msg) or ("non hai abbastanza denaro" in msg)) and quest:
+	time.sleep(t)
+	answ="/quests"
 elif "I banditi hanno attaccato il villaggio" in msg and quest:
 	if not quest:
 		t=0.3
@@ -66,9 +69,6 @@ elif "I tuoi campi sono pieni." in msg:
 	time.sleep(t)
 	answ="/harvest"
 	log(msg,answ)
-elif "non hai denaro" in msg and quest:
-	time.sleep(t)
-	answ="/quests"
 else:
 	log(msg,answ,"ERROR")
 

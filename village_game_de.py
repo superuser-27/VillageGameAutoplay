@@ -24,6 +24,9 @@ if "Wähle eine Quest, sie durchzuführen wird etwas kosten" in msg and quest:
 	time.sleep(t)
 	answ="⭐️⭐️⭐️Das Dorf retten"
 	log(msg,answ)
+elif "nicht genug Geld" in msg and quest:
+	time.sleep(t)
+	answ="/quests"
 elif "Banditen haben ein Dorf angegriffen" in msg and quest:
 	if not quest:
 		t=0.3
@@ -66,9 +69,6 @@ elif "Deine Felder sind voll. Du musst die Ernte einfahren, sonst wird sie verro
 	time.sleep(t)
 	answ="/harvest"
 	log(msg,answ)
-elif "nicht genug Geld" in msg and quest:
-	time.sleep(t)
-	answ="/quests"
 else:
 	log(msg,answ,"ERROR")
 
