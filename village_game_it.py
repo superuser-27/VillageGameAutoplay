@@ -19,10 +19,18 @@ pause=settings["pause"]
 if pause == 1:
 	fight=0
 	quest=0
+
+val=[int(s) for s in msg.split() if s.isdigit()]
+words=[s for s in msg.split()]
+lastword=words[len(words)-1]
+lastnum=lastword[:-1]
 #quest
 if "Completa le missioni, vinci e guadagnarai" in msg and quest:
 	time.sleep(t)
-	answ="⭐️⭐️⭐️Difendi il villaggio"
+	if int(lastnum)>8000 and fight:
+		answ="/battles"
+	else:
+		answ="⭐️⭐️⭐️Difendi il villaggio"
 	log(msg,answ)
 elif (("non hai denaro" in msg) or ("non hai abbastanza denaro" in msg)) and quest:
 	time.sleep(t)
@@ -42,10 +50,12 @@ elif "I banditi sono dei tipacci davvero cattivi" in msg and quest:
 #fight
 elif "Puoi combattere con altri giocatori" in msg and fight:
 	time.sleep(t)
-	answ="Cerca avversario👁"
+	if int(lastnum)<2000 and quest:
+		answ="/quests"
+	else:
+		answ="Cerca avversario👁"
 	log(msg,answ)
 elif "Per attaccare, hai bisogno di" in msg and fight:
-	val=[int(s) for s in msg.split() if s.isdigit()]
 	if not fight:
 		t=0.3
 	time.sleep(t)

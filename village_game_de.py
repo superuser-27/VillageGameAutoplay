@@ -42,10 +42,12 @@ elif "Die Banditen sind starke Jungs —  sie haben deine Truppen in die Mangel 
 #fight
 elif "Du kannst gegen andere Spieler kämpfen um Medailen" in msg and fight:
 	time.sleep(t)
-
+	if int(lastnum)<2000 and quest:
+		answ="/quests"
+	else:
+		answ="Gegner suchen!👁"
 	log(msg,answ)
 elif "Dein Gegner ist" in msg and fight:
-	val=[int(s) for s in msg.split() if s.isdigit()]
 	if not fight:
 		t=0.3
 	time.sleep(t)

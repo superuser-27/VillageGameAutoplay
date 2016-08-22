@@ -19,10 +19,19 @@ pause=settings["pause"]
 if pause == 1:
 	fight=0
 	quest=0
+
+val=[int(s) for s in msg.split() if s.isdigit()]
+words=[s for s in msg.split()]
+lastword=words[len(words)-1]
+lastnum=lastword[:-1]
+
 #quest
 if "You can choose a quest, which performing" in msg and quest:
 	time.sleep(t)
-	answ="⭐️⭐️⭐️Save the village"
+	if int(lastnum)>8000 and fight:
+		answ="/battles"
+	else:
+		answ="⭐️⭐️⭐️Save the village"
 	log(msg,answ)
 elif "you have no money" in msg and quest:
 	time.sleep(t)
@@ -42,10 +51,12 @@ elif "The bandits were some strong guys" in msg and quest:
 #fight
 elif "You can fight against other players and win medals" in msg and fight:
 	time.sleep(t)
-	answ="Search opponent👁"
+	if int(lastnum)<2000 and quest:
+		answ="/quests"
+	else:
+		answ="Search opponent👁"
 	log(msg,answ)
 elif "Your opponent is" in msg and fight:
-	val=[int(s) for s in msg.split() if s.isdigit()]
 	if not fight:
 		t=0.3
 	time.sleep(t)
