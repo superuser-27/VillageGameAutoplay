@@ -7,7 +7,8 @@ https://github.com/vysheng/tg
 1. Goto your telegram-cli directory, for example:  
 `cd Downloads/tg`
 2. Create a subdirectory "VillageGameAutoplay" and download all files there or just clone this Repository:  
-`git clone https://github.com/superuser-27/VillageGameAutoplay VillageGameAutoplay`
+`git clone https://github.com/superuser-27/VillageGameAutoplay VillageGameAutoplay`  
+:warning: the subfolder **must** be called "VillageGameAutoplay" :warning:
 3. Then start telegram-cli and execute the lua script file. Something like this:  
 `bin/telegram-cli -k tg-server.pub -W -s VillageGameAutoplay/action.lua`
 
