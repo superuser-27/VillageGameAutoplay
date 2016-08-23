@@ -61,7 +61,7 @@ function on_msg_receive (msg)
 	end
       end
 	if(msg.text=="Ping" or msg.text=="ping") then
-		if not file_check("VillageGameAutoplay/no_ping"..msg.to.print_name..)then
+		if not file_check("VillageGameAutoplay/no_ping_"..msg.to.print_name..)then
 			send_msg(msg.from.print_name,"Pong 🏓",status_offline,false
 		end
 	end
