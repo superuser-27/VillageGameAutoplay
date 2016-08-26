@@ -15,6 +15,7 @@ function on_msg_receive (msg)
 		io.write('{"quest": 1, "fight": 1, "pause": 0}')
 		io.close(file)
 	 	send_msg(msg.from.print_name,"Auto quest/fight resumed.",status_offline,false)
+		send_msg("Village_Game","/quests",status_offline,false)
 	elseif(msg.text=="/11")then
 		file=io.open("VillageGameAutoplay/setting_"..msg.from.print_name..".json","w")
 		io.output(file)

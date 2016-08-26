@@ -9,6 +9,7 @@
 setting_*.json
 village_game_*.py
 action_*.lua
+lootbot.py
 
 # IDE files to ignore (Netbeans, Eclipse)
 nbproject/private/
