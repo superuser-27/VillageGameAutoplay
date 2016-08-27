@@ -56,14 +56,14 @@ function on_msg_receive (msg)
 		setlang('en',msg.from.print_name)
 	 	send_msg(msg.from.print_name,'Language set to English!',status_offline,false)
 	elseif(msg.text=="/disable_ping")then
-		file_create("VillageGameAutoplay/no_ping_"..msg.to.print_name..)
+		file_create("VillageGameAutoplay/no_ping_"..msg.to.print_name)
 	elseif(msg.text=="/enable_ping")then
-		file_delete("VillageGameAutoplay/no_ping_"..msg.to.print_name..)
+		file_delete("VillageGameAutoplay/no_ping_"..msg.to.print_name)
 	end
       end
 	if(msg.text=="Ping" or msg.text=="ping") then
-		if not file_check("VillageGameAutoplay/no_ping_"..msg.to.print_name..)then
-			send_msg(msg.from.print_name,"Pong 🏓",status_offline,false
+		if not file_check("VillageGameAutoplay/no_ping_"..msg.to.print_name)then
+			send_msg(msg.from.print_name,"Pong 🏓",status_offline,false)
 		end
 	end
 
@@ -147,6 +147,8 @@ function file_create(filename)
 		io.output(file)
 		io.write("")
 	io.close(file)
+end
 
 function file_delete(filename)
 	os.remove(filename)
+end
