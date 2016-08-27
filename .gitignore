@@ -10,6 +10,7 @@ setting_*.json
 village_game_*.py
 action_*.lua
 lootbot.py
+no_ping_*
 
 # IDE files to ignore (Netbeans, Eclipse)
 nbproject/private/
